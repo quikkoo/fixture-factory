@@ -45,8 +45,7 @@ public class ObjectFactory {
 	}
 
     public ObjectFactory uses(Processor processor) {
-        this.processor = processor;
-        return this;
+    	return new ObjectFactory(templateHolder, processor);
     }
     
 	@SuppressWarnings("unchecked")
