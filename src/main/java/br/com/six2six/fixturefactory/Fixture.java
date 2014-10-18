@@ -1,6 +1,7 @@
 package br.com.six2six.fixturefactory;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Fixture {
@@ -26,5 +27,13 @@ public class Fixture {
 		}
 
 		return factory;
+	}
+
+	public static <T> T gimme(String label, Class<T> clazz) {
+		return from(clazz).gimme(label);
+	}
+
+	public static <T> List<T> gimme(Integer quantity, String label, Class<T> clazz) {
+		return from(clazz).gimme(quantity, label);
 	}
 }
